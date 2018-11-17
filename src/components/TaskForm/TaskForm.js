@@ -38,7 +38,7 @@ class TaskForm extends React.Component {
     }
 }
 
-TaskForm.defaultTypes = {
+TaskForm.defaultProps = {
     addTask: f => f
 };
 
