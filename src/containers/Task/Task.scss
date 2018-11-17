@@ -1,0 +1,28 @@
+@mixin font($color, $size) {
+    color: $color;
+    font-size: $size;
+}
+
+.task {
+    padding: 0.5rem;
+    border: 2px solid #f4f4f4;
+    border-radius: 0.25rem;
+    margin: 1rem 0;
+
+    &__name {
+        @include font(#181818, 1rem);
+    }
+
+    &__status {
+        @include font(#555, 0.8rem);
+        margin-top: 0.3rem;
+    }
+
+    &__control {
+        margin-top: 1rem;
+
+        & > *:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+}
