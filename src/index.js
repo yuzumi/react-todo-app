@@ -1,9 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './components/App/App';
+import { createStore, combineReducers } from 'redux'
+import { Provider } from 'react-redux';
+import todos from './reducers/todos';
+import App from './containers/App/App';
+import './styles/index.scss';
+
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = createStore(combineReducers({
+    todos
+}));
+
+const RootElement = document.getElementById('root');
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>, 
+    RootElement
+);
 
 serviceWorker.unregister();

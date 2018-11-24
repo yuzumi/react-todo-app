@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from '../../utils/classnames';
-import './Button.scss';
 
 const Button = ({ name, classNames = [], type = 'button', handleClick = f => f }) => (
     <button className={classnames('button', ...classNames)} type={type} onClick={handleClick}>{name}</button>
